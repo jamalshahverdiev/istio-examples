@@ -3,8 +3,8 @@ ISTIO_FOLDER='istio'
 ISTIO_VERSION='1.15.0'
 KEY_FOLDER='keys'
 NAMESPACE='foo'
-PRIVATE_KEYFILE='private-key.pem'
-PUBLIC_KEYFILE='public-key.pem'
+PRIVATE_KEYFILE='PRIVATE.pem'
+PUBLIC_KEYFILE='PUBLIC.pem'
 
 if [ ! -d ${KEY_FOLDER} ]; then 
     mkdir ${KEY_FOLDER} && cd ${KEY_FOLDER}
