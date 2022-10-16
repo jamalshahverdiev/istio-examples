@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ HTTPBIN_VS_NAME }}
+  namespace: {{ NAMESPACE }}
+spec:
+  hosts:
+  - "{{ HTTPBIN_DOMAIN }}"
+  gateways:
+  - istio-system/tls-gateway
+  http:
+  - route:
+    - destination:
+        port:
+          number: 8000
+        host: httpbin.foo.svc.cluster.local
