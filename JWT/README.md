@@ -7,6 +7,13 @@
 * Python3
 * kubectl
 
+### Code files structure looks like following
+
+* `create-keys-and-apply-httpbin.sh` - Bash script generate `Public` and `Private` keys and applies Kubernetes manifests related `httpbin` app
+* `generate-validate-jwt-from-keys.py` - Python code uses `PRIVATE` KEY to create `JWT_TOKEN` and convert `PUBLIC` key to Istio CRD format. Then applies all manifests to `foo` namespace
+  * `src/variables.py` - All variables defined here
+  * `templates/` - Folder contains all Kubernetes manifests templates
+
 #### Before starting implement JWT we must create `PUBLIC` and `PRIVATE` key which will be used to forlumate PUBLIC key for validation JWT token and TOKEN itself. And deploy test `httpbin` application inside of the `foo` namespace. To full implementation of JWT we must write another service which will be responsible to create `JWT_TOKENS` with `PRIVATE` key. In our case we will use PYTHON code to do that, but for validation we will convert PUBLIC key to ISTIO CRD format which will be used by `RequestAuthentication` istio object. 
 
 **Note:** `KUBECONFIG` must be present in terminal where we will execute all following commands
