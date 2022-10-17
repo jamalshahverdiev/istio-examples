@@ -34,6 +34,6 @@ $ ./create-keys-and-apply-httpbin.sh
 
 ```bash
 $ DOMAIN_NAME='httpbin.istio.domain.local'
-$ export Token='JWT TOKEN OUTPUT FROM PYTHON CODE'
+$ Token='JWT TOKEN OUTPUT FROM PYTHON CODE'
 $ curl --header "Authorization: Bearer $Token" https://${DOMAIN_NAME}/headers -s -o /dev/null -w "%{http_code}\n"
 ```
